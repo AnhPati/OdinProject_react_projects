@@ -4,9 +4,9 @@ import { Input } from './Input'
 
 const ProfessionnalExp = () => {
     return (
-        <div className="expPro-container d-flex flex-center flex-column">
+        <div className="expPro-container row">
             <h2>Expériences professionnelles</h2>
-            <div className="d-flex flex-column">
+            <div className="row d-flex flex-column">
                 <Input
                     htmlFor="companyName"
                     type="text" name="companyName"
@@ -21,7 +21,7 @@ const ProfessionnalExp = () => {
                 />
                 <Input
                     htmlFor="companyResponsabilities"
-                    type="text" name="companyResponsabilities"
+                    type="textarea" name="companyResponsabilities"
                     id="companyResponsabilities"
                     text={`Enter your company's responsabilities:`}
                 />
@@ -31,12 +31,14 @@ const ProfessionnalExp = () => {
                         type="date" name="startCompany"
                         id="startCompany"
                         text="Start date:"
+                        classDiv="s4"
                     />
                     <Input
                         htmlFor="endCompany"
                         type="date" name="endCompany"
                         id="endCompany"
                         text="End date:"
+                        classDiv="s4"
                     />
                 </div>
             </div>

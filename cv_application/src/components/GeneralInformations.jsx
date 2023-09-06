@@ -5,43 +5,48 @@ import { Input } from './Input'
 
 const GeneralInformations = () => {
     return (
-        <div className="info-container d-flex flex-center flex-column">
+        <div className="info-container row">
             <h2>Informations générales</h2>
-            <div className="d-flex flex-center">
-                <Input
-                    htmlFor="laststName"
-                    type="text" name="firstName"
-                    id="firstName"
-                    text="Enter your firstname:"
-                    required={true}
-                />
+            <div className="row d-flex flex-end">
                 <Input
                     htmlFor="laststName"
                     type="text" name="laststName"
                     id="laststName"
-                    text="Enter your laststname:"
+                    text="Nom"
                     required={true}
+                    classDiv="s4"
+                />
+                <Input
+                    htmlFor="laststName"
+                    type="text" name="firstName"
+                    id="firstName"
+                    text="Prénom"
+                    required={true}
+                    classDiv="s4"
                 />
                 <Input
                     htmlFor="photo"
                     type="file" name="photo"
                     id="photo"
-                    text="Select your photo:"
+                    text="Photo"
+                    classDiv="s4 right"
                 />
             </div>
-            <div className="d-flex flex-center">
+            <div className="row">
                 <Input
                     htmlFor="email"
                     type="email" name="email"
                     id="email"
                     text="Enter your email:"
                     required={true}
+                    classDiv="s6"
                 />
                 <Input
                     htmlFor="phone"
-                    type="phone" name="phone"
-                    id="tel"
+                    type="tel" name="phone"
+                    id="phone"
                     text="Enter your phone number:"
+                    classDiv="s6"
                 />
             </div>
         </div>

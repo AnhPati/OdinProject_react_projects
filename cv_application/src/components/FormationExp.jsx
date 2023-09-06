@@ -5,9 +5,9 @@ import { Input } from './Input'
 
 const FormationExp = () => {
     return (
-        <div className="formations-container d-flex flex-center flex-column">
+        <div className="formations-container row">
             <h2>Formations</h2>
-            <div className="d-flex flex-column">
+            <div className="row d-flex flex-column">
                 <Input
                     htmlFor="formationName"
                     type="text" name="formationName"
@@ -25,6 +25,7 @@ const FormationExp = () => {
                     type="text" name="yearFormation"
                     id="yearFormation"
                     text="Year of formation"
+                    classDiv="s4"
                 />
             </div>
         </div>

@@ -7,9 +7,9 @@ import { Button } from './Button'
 
 const CreationCV = () => {
     return (
-        <div className="main-container d-flex flex-center flex-column">
+        <div className="main-container row">
             <h2>CreationCV</h2>
-            <form action="">
+            <form className="col s12" action="">
                 <GeneralInformations />
                 <FormationExp />
                 <ProfessionnalExp />
