@@ -13,7 +13,7 @@ const CreationCV = () => {
                 <GeneralInformations />
                 <FormationExp />
                 <ProfessionnalExp />
-                <Button />
+                <Button type="submit" text="Valider" />
             </form>
         </div>
     )
