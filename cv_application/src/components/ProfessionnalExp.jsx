@@ -1,10 +1,11 @@
 import '../styles/exp-pro.css'
 import '../styles/styles.css'
+import { Button } from './Button'
 import { Input } from './Input'
 
 const ProfessionnalExp = () => {
     return (
-        <div className="expPro-container row">
+        <div className="expPro-container row d-flex flex-column">
             <h2>Expériences professionnelles</h2>
             <div className="row d-flex flex-column">
                 <Input
@@ -42,6 +43,7 @@ const ProfessionnalExp = () => {
                     />
                 </div>
             </div>
+            <Button type="button" text="Ajouter" classBtn="right-self" />
         </div>
     )
 }

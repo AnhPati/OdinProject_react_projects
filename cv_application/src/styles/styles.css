@@ -15,6 +15,10 @@
     flex-direction: column;
 }
 
+.flex-column>.right-self {
+    align-self: flex-end;
+}
+
 /*Input*/
 .photo-img {
     margin-right: 5%;

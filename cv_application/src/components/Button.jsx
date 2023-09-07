@@ -1,7 +1,7 @@
 import '../styles/styles.css'
 
-export const Button = ({ type, text = 'Push' }) => {
+export const Button = ({ type, text = 'Push', classBtn }) => {
     return (
-        <button className="waves-effect waves-light btn" type={type}>{text}</button>
+        <button className={`waves-effect waves-light btn ${classBtn}`} type={type}>{text}</button>
     )
 }
