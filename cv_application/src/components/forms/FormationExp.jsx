@@ -5,7 +5,9 @@ import ExpContainer from './ExpContainer'
 
 import { Input } from './Input'
 
-const FormationExp = ({ addExp }) => {
+const FormationExp = ({ datas, addExp }) => {
+    const formationsData = datas.formationsData
+
     return (
         <div id="exp-formation" className="formations-container row d-flex flex-column">
             <h2>Formations</h2>
@@ -31,7 +33,7 @@ const FormationExp = ({ addExp }) => {
                 />
             </div>
             <Button type="button" text="Ajouter" classBtn="right-self" onClick={addExp} />
-            <ExpContainer id="formations" />
+            <ExpContainer datas={formationsData} id="formations" />
         </div>
     )
 }

@@ -3,21 +3,22 @@ import '../styles/styles.css'
 
 import { Input } from './Input'
 
-const GeneralInformations = () => {
+const GeneralInformations = ({ datas }) => {
+
     return (
         <div className="info-container row">
             <h2>Informations générales</h2>
             <div className="row d-flex flex-end">
                 <Input
-                    htmlFor="laststName"
+                    htmlFor="lastName"
                     type="text" name="laststName"
-                    id="laststName"
+                    id="lastName"
                     text="Nom"
                     required={true}
                     classDiv="s4"
                 />
                 <Input
-                    htmlFor="laststName"
+                    htmlFor="firstName"
                     type="text" name="firstName"
                     id="firstName"
                     text="Prénom"

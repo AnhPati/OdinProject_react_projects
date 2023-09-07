@@ -4,9 +4,8 @@ import { Button } from './Button'
 import { Input } from './Input'
 import ExpContainer from './ExpContainer'
 
-const ProfessionnalExp = ({ addExp }) => {
-
-
+const ProfessionnalExp = ({ datas, addExp }) => {
+    const datasPro = datas.pro
 
     return (
         <div id="exp-pro" className="expPro-container row d-flex flex-column">
@@ -48,7 +47,7 @@ const ProfessionnalExp = ({ addExp }) => {
                 </div>
             </div>
             <Button type="button" text="Ajouter" classBtn="right-self" onClick={addExp} />
-            <ExpContainer id="pro" />
+            <ExpContainer datas={datasPro} id="pro" />
         </div>
     )
 }

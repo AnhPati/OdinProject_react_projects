@@ -3,7 +3,7 @@ import datas from "../datas/userDatas";
 
 const ExpContainer = ({ id }) => {
     const dataExp = id === 'formations' ? datas.formations : datas.pro
-    console.log(dataExp)
+
     return (
         <div id={id} className="col s12">
             {dataExp.map((data) => {

@@ -5,10 +5,8 @@ import ProfessionnalExp from './ProfessionnalExp'
 import FormationExp from './FormationExp'
 import { Button } from './Button'
 import { ExpResume } from './ExpResume'
-import datas from '../datas/userDatas.json'
 
-const CreationCV = () => {
-    console.log('datas')
+const CreationCV = ({ userDatas }) => {
 
     const handleClickAddExp = (event) => {
         const container = event.target.parentElement
@@ -38,15 +36,15 @@ const CreationCV = () => {
     }
 
     return (
-        <div className="main-container row">
+        <>
             <h2>CreationCV</h2>
             <form className="col s12" action="">
-                <GeneralInformations />
-                <FormationExp addExp={handleClickAddExp} />
-                <ProfessionnalExp addExp={handleClickAddExp} />
+                <GeneralInformations datas={userDatas} />
+                <FormationExp datas={userDatas} addExp={handleClickAddExp} />
+                <ProfessionnalExp datas={userDatas} addExp={handleClickAddExp} />
                 <Button type="submit" text="Valider" />
             </form>
-        </div>
+        </>
     )
 }
 
