@@ -1,21 +1,32 @@
-export const ExpContainer = ({ type, name, title, date, experiences }) => {
-    return (
-        <>
-            {type === 'formation' ? (
-                <div className="row">
-                    <h3>{name}</h3>
-                    <h4>{title}</h4>
-                    <sub>{date}</sub>
-                </div>
-            ) : (
-                <div className="row">
-                    <h3>{name}</h3>
-                    <h4>{title}</h4>
-                    <sub>{date}</sub>
-                    <p>{experiences}</p>
-                </div>
-            )}
-        </>
+import { ExpResume } from "./ExpResume";
+import datas from "../datas/userDatas";
 
-    )
+const ExpContainer = ({ id }) => {
+    const dataExp = id === 'formations' ? datas.formations : datas.pro
+    console.log(dataExp)
+    return (
+        <div id={id} className="col s12">
+            {dataExp.map((data) => {
+                let date
+                if (id === 'formations') {
+                    date = data.year
+                } else {
+                    date = [data.startDate, data.endDate]
+                }
+
+                return (
+                    <ExpResume
+                        key={data.id}
+                        name={data.name}
+                        title={data.title}
+                        location={data.location}
+                        experiences={data.experiences}
+                        date={date}
+                    />
+                )
+            })}
+        </div>
+    );
 }
+
+export default ExpContainer;

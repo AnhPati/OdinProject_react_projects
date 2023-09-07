@@ -2,10 +2,14 @@ import '../styles/exp-pro.css'
 import '../styles/styles.css'
 import { Button } from './Button'
 import { Input } from './Input'
+import ExpContainer from './ExpContainer'
 
-const ProfessionnalExp = () => {
+const ProfessionnalExp = ({ addExp }) => {
+
+
+
     return (
-        <div className="expPro-container row d-flex flex-column">
+        <div id="exp-pro" className="expPro-container row d-flex flex-column">
             <h2>Expériences professionnelles</h2>
             <div className="row d-flex flex-column">
                 <Input
@@ -43,7 +47,8 @@ const ProfessionnalExp = () => {
                     />
                 </div>
             </div>
-            <Button type="button" text="Ajouter" classBtn="right-self" />
+            <Button type="button" text="Ajouter" classBtn="right-self" onClick={addExp} />
+            <ExpContainer id="pro" />
         </div>
     )
 }

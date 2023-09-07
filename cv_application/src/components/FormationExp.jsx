@@ -1,12 +1,13 @@
 import '../styles/formations.css'
 import '../styles/styles.css'
 import { Button } from './Button'
+import ExpContainer from './ExpContainer'
 
 import { Input } from './Input'
 
-const FormationExp = () => {
+const FormationExp = ({ addExp }) => {
     return (
-        <div className="formations-container row d-flex flex-column">
+        <div id="exp-formation" className="formations-container row d-flex flex-column">
             <h2>Formations</h2>
             <div className="row d-flex flex-column">
                 <Input
@@ -29,7 +30,8 @@ const FormationExp = () => {
                     classDiv="s4"
                 />
             </div>
-            <Button type="button" text="Ajouter" classBtn="right-self" />
+            <Button type="button" text="Ajouter" classBtn="right-self" onClick={addExp} />
+            <ExpContainer id="formations" />
         </div>
     )
 }
