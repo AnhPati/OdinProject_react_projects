@@ -5,8 +5,10 @@ import ProfessionnalExp from './ProfessionnalExp'
 import FormationExp from './FormationExp'
 import { Button } from './Button'
 import { ExpResume } from './ExpResume'
+import datas from '../datas/userDatas.json'
 
 const CreationCV = () => {
+    console.log('datas')
 
     const handleClickAddExp = (event) => {
         const container = event.target.parentElement
