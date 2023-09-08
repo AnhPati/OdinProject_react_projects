@@ -1,9 +1,7 @@
-import datas from "../datas/userDatas"
-
-export const ExpResume = ({ id, name, title, date, experiences, location }) => {
+export const ExpResume = ({ container, name, title, date, responsabilities, location }) => {
     return (
         <>
-            {id === 'exp-formation' ? (
+            {container === 'formations-exp' ? (
                 <div className="row">
                     <h3>{name}</h3>
                     <h4>{title}</h4>
@@ -16,7 +14,7 @@ export const ExpResume = ({ id, name, title, date, experiences, location }) => {
                     <h4>{title}</h4>
                     <sub>{date}</sub>
                     <p>{location}</p>
-                    <p>{experiences}</p>
+                    <p>{responsabilities}</p>
                 </div>
             )}
         </>
