@@ -26,7 +26,7 @@ export const Input = ({ htmlFor, type, name, id, text, required = false, classDi
                         <input type={type} name={name} id={id} required={required} className="validate" value={value} onChange={onChange} />
                     )
                     }
-                    <label htmlFor={htmlFor}>{text}</label>
+                    <label className={value === '' ? '' : 'active'} htmlFor={htmlFor}>{text}</label>
                 </div>
             )
             }
