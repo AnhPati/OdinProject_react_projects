@@ -5,38 +5,23 @@ function App() {
   const [editionMode, setEditionMode] = useState(false)
 
   const [userProfil, setUserProfil] = useState({
-    firstName: '',
+    firstname: '',
     lastname: '',
     photo: 'http://via.placeholder.com/120x120',
     email: '',
     phone: ''
   })
 
-  const [userFormation, setUserFormation] = useState([
-    {
-      id: '',
-      name: '',
-      title: '',
-      location: '',
-      year: ''
-    }
-  ])
+  const [userFormation, setUserFormation] = useState([])
 
-  const [userExp, setUserExp] = useState([
-    {
-      id: '',
-      name: '',
-      title: '',
-      location: '',
-      responsabilities: ',',
-      startDate: '',
-      endDate: ''
-    }
-  ])
+  const [userExp, setUserExp] = useState([])
 
-  const addExp = (event) => {
+  const addExp = (values, event) => {
     const container = event.target.parentElement
     const copyExpArray = container.id === 'formations' ? [...userFormation] : [...userExp]
+    const inputs = container.querySelectorAll('input')
+    console.log('Inputs :')
+    console.log(values)
     const newExp = container.id === 'formations' ? {
       id: '',
       name: '',

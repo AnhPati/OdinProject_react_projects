@@ -1,15 +1,16 @@
-export const ExpResume = ({ container, name, title, date, responsabilities, location }) => {
+export const ExpResume = ({ container, name, title, date, responsabilities, location, id }) => {
     return (
         <>
             {container === 'formations-exp' ? (
-                <div className="row">
+                <div id={id} className="row">
+                    coucou
                     <h3>{name}</h3>
                     <h4>{title}</h4>
                     <sub>{date}</sub>
                     <p>{location}</p>
                 </div>
             ) : (
-                <div className="row">
+                <div id={id} className="row">
                     <h3>{name}</h3>
                     <h4>{title}</h4>
                     <sub>{date}</sub>

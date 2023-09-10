@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../../styles/styles.css'
 
 export const Input = ({ htmlFor, type, name, id, text, required = false, classDiv, onChange, value, src }) => {
     return (

@@ -1,20 +1,41 @@
+import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/formations.css'
 import '../styles/styles.css'
-import { Button } from './Button'
+import { Button } from './ui/Button'
 import ExpContainer from './ExpContainer'
 
-import { Input } from './Input'
+import { Input } from './ui/Input'
 
 const FormationExp = ({
     editionMode,
     datas,
-    setDataFormation,
-    addExp
+    setDataFormation
 }) => {
 
+    const [formationValues, setFormationValue] = useState({})
+
     const handleChange = (event) => {
-        const newDatas = { ...datas, [event.target.id]: event.target.value }
-        setDataFormation(newDatas)
+        const newValues = { ...formationValues, [event.target.name]: event.target.value }
+        setFormationValue(newValues)
+    }
+
+    const addExp = (event) => {
+        const inputs = event.target.parentElement.querySelectorAll('input')
+        const newExp = { ...formationValues, id: uuidv4() }
+        const copyDatasArray = datas
+
+        copyDatasArray.push(newExp)
+        setDataFormation(copyDatasArray)
+        Array.from(inputs).map(input => input.value = '')
+        setFormationValue({})
+    }
+
+    const removeExp = (event) => {
+        const oldExpId = event.target.previousSibling.id
+        const copyDatasArray = datas.filter(data => data.id !== oldExpId)
+
+        setDataFormation(copyDatasArray)
     }
 
     return (
@@ -26,42 +47,42 @@ const FormationExp = ({
                     <div className="row d-flex flex-column">
                         <Input
                             htmlFor="formationName"
-                            type="text" name="formationName"
+                            type="text" name="name"
                             id="formationName"
                             text="Organisme de formation :"
                             onChange={handleChange}
-                            value={datas.name}
+                            value={formationValues.name || ''}
                         />
                         <Input
                             htmlFor="formationTitle"
-                            type="text" name="formationTitle"
+                            type="text" name="title"
                             id="formationTitle"
                             text="Nom de la formation :"
                             onChange={handleChange}
-                            value={datas.title}
+                            value={formationValues.title || ''}
                         />
                         <Input
                             htmlFor="formationLocation"
-                            type="text" name="formationLocation"
+                            type="text" name="location"
                             id="formationLocation"
                             text="Lieu de la formation :"
                             onChange={handleChange}
-                            value={datas.location}
+                            value={formationValues.location || ''}
                         />
                         <Input
                             htmlFor="yearFormation"
-                            type="text" name="yearFormation"
+                            type="text" name="year"
                             id="yearFormation"
                             text="Année de la formation :"
                             classDiv="s4"
                             onChange={handleChange}
-                            value={datas.year}
+                            value={formationValues.year || ''}
                         />
                     </div>
                     <Button type="button" text="Ajouter" classBtn="right-self" onClick={addExp} />
                 </>
             )}
-            <ExpContainer datas={datas} id="formations-exp" />
+            <ExpContainer removeExp={removeExp} datas={datas} id="formations-exp" />
         </div>
     )
 }

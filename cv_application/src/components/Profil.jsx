@@ -1,14 +1,14 @@
+import { useState } from 'react'
 import '../styles/general-info.css'
 import '../styles/styles.css'
 
-import { Input } from './Input'
+import { Input } from './ui/Input'
 
 const Profil = ({
     editionMode,
     datas,
     setDataProfil
 }) => {
-
     const handleChange = (event) => {
         const newDatas = { ...datas, [event.target.id]: event.target.value }
         setDataProfil(newDatas)
@@ -16,7 +16,8 @@ const Profil = ({
 
     const handleChangeFile = (event) => {
         event.preventDefault()
-        const newDatas = { ...datas, photo: URL.createObjectURL(event.target.value) }
+        console.log(event.target.files[0])
+        const newDatas = { ...datas, photo: URL.createObjectURL(event.target.files[0]) }
         setDataProfil(newDatas)
     }
 
@@ -27,24 +28,24 @@ const Profil = ({
                 {editionMode ? (
                     <>
                         <Input
-                            htmlFor="lastName"
-                            type="text" name="laststName"
-                            id="lastName"
+                            htmlFor="lastname"
+                            type="text" name="laststname"
+                            id="lastname"
                             text="Nom :"
                             required={true}
                             classDiv="s4"
                             onChange={handleChange}
-                            value={datas.lastName}
+                            value={datas.lastname}
                         />
                         <Input
-                            htmlFor="firstName"
-                            type="text" name="firstName"
-                            id="firstName"
+                            htmlFor="firstname"
+                            type="text" name="firstname"
+                            id="firstname"
                             text="Prénom :"
                             required={true}
                             classDiv="s4"
                             onChange={handleChange}
-                            value={datas.firstName}
+                            value={datas.firstname}
                         />
                         <Input
                             htmlFor="photo"
@@ -60,10 +61,10 @@ const Profil = ({
                 ) : (
                     <>
                         <div className="col s4">
-                            <h4>{datas.lastName}</h4>
+                            <h4>{datas.lastname}</h4>
                         </div>
                         <div className="col s4">
-                            <h4>{datas.firstName}</h4>
+                            <h4>{datas.firstname}</h4>
                         </div>
                         <div className="col s4">
                             <div className="phot-img">
