@@ -23,15 +23,26 @@ const CVGenerator = ({
     }
 
     const printCV = () => {
-        const hideElements = document.querySelectorAll('button')
-        Array.from(hideElements).map(elem => elem.style.display = 'none')
+        const hideElements = Array.from(document.querySelectorAll('button'))
+        hideElements.push(document.querySelector('#title-app'))
+        hideElements.map(elem => elem.style.display = 'none')
+
         window.print()
-        Array.from(hideElements).map(elem => elem.style.display = 'inline-block')
+        hideElements.map(elem => elem.style.display = 'inline-block')
+    }
+
+    const downloadCV = () => {
+        const hideElements = Array.from(document.querySelectorAll('button'))
+        hideElements.push(document.querySelector('#title-app'))
+        hideElements.map(elem => elem.style.display = 'none')
+
+        alert('Optimiser pour le format PDF')
+        hideElements.map(elem => elem.style.display = 'inline-block')
     }
 
     return (
         <>
-            <h2>CV Generator</h2>
+            <h2 id='title-app'>CV Generator</h2>
             <form id="for-print" className="col s12" action="">
                 <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
                 <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} addExp={addExp} />
@@ -42,6 +53,7 @@ const CVGenerator = ({
                     <div className='d-flex'>
                         <Button type="button" text="Editer" onClick={saveData} />
                         <Button type="button" text="Imprimer" onClick={printCV} />
+                        <Button type="button" text="Télécharger" onClick={downloadCV} />
                     </div>
                 )}
 
