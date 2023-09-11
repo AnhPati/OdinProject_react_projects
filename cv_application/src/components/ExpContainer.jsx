@@ -1,7 +1,7 @@
 import { ExpResume } from "./ExpResume";
 import { Button } from "./ui/Button";
 
-const ExpContainer = ({ id, datas, removeExp }) => {
+const ExpContainer = ({ id, datas, removeExp, editionMode }) => {
 
     return (
         <div id={id} className="col s12">
@@ -20,7 +20,9 @@ const ExpContainer = ({ id, datas, removeExp }) => {
                             responsabilities={data.responsabilities}
                             date={date}
                         />
-                        <Button key={`${data.id}-btn`} type="button" text="Supprimer" onClick={removeExp} />
+                        {editionMode && (
+                            <Button key={`${data.id}-btn`} type="button" text="Supprimer" onClick={removeExp} />
+                        )}
                     </>
                 )
             })}

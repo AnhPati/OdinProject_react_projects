@@ -101,7 +101,7 @@ const ExperiencePro = ({
                 </>
             )}
 
-            <ExpContainer removeExp={removeExp} datas={datas} id="pro" />
+            <ExpContainer removeExp={removeExp} datas={datas} id="pro" editionMode={editionMode} />
         </div>
     )
 }

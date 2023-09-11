@@ -82,7 +82,7 @@ const FormationExp = ({
                     <Button type="button" text="Ajouter" classBtn="right-self" onClick={addExp} />
                 </>
             )}
-            <ExpContainer removeExp={removeExp} datas={datas} id="formations-exp" />
+            <ExpContainer removeExp={removeExp} datas={datas} id="formations-exp" editionMode={editionMode} />
         </div>
     )
 }
