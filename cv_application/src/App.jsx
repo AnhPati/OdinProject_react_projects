@@ -3,57 +3,32 @@ import { useState } from "react"
 
 function App() {
   const [editionMode, setEditionMode] = useState(false)
-
   const [userProfil, setUserProfil] = useState({
+    jobtitle: '',
     firstname: '',
     lastname: '',
     photo: 'http://via.placeholder.com/120x120',
+    adress: '',
     email: '',
     phone: ''
   })
-
   const [userFormation, setUserFormation] = useState([])
-
   const [userExp, setUserExp] = useState([])
-
-  const addExp = (values, event) => {
-    const container = event.target.parentElement
-    const copyExpArray = container.id === 'formations' ? [...userFormation] : [...userExp]
-    const inputs = container.querySelectorAll('input')
-    console.log('Inputs :')
-    console.log(values)
-    const newExp = container.id === 'formations' ? {
-      id: '',
-      name: '',
-      title: '',
-      location: '',
-      year: ''
-    } : {
-      id: '',
-      name: '',
-      title: '',
-      location: '',
-      responsabilities: ',',
-      startDate: '',
-      endDate: ''
-    }
-
-    copyExpArray.push(newExp)
-    container.id === 'formations' ? setUserFormation[copyExpArray] : setUserExp[copyExpArray]
-  }
+  const [userSkills, setUserSkills] = useState([])
 
   return (
-    <div className="main-container row">
+    <div className="main-container container">
       <CVGenerator
         editionMode={editionMode}
         dataProfil={userProfil}
         dataFormation={userFormation}
         dataExp={userExp}
+        dataSkills={userSkills}
         setEditionMode={setEditionMode}
         setDataProfil={setUserProfil}
         setDataFormation={setUserFormation}
         setDataExp={setUserExp}
-        addExp={addExp}
+        setDataSkills={setUserSkills}
       />
     </div>
   )

@@ -4,21 +4,24 @@ import Profil from './Profil'
 import FormationExp from './Formation'
 import { Button } from './ui/Button'
 import ExperiencePro from './ExperiencePro'
+import Skills from './Skills'
 
 const CVGenerator = ({
     editionMode,
     dataProfil,
     dataFormation,
     dataExp,
+    dataSkills,
     setEditionMode,
     setDataProfil,
     setDataFormation,
     setDataExp,
-    addExp
+    setDataSkills
 }) => {
 
     const saveData = () => {
         setDataProfil(dataProfil)
+        setDataSkills(dataSkills)
         setEditionMode(!editionMode)
     }
 
@@ -36,29 +39,40 @@ const CVGenerator = ({
         hideElements.push(document.querySelector('#title-app'))
         hideElements.map(elem => elem.style.display = 'none')
 
-        alert('Optimiser pour le format PDF')
+        alert('Vous pouvez télécharger votre CV au format PDF.')
         hideElements.map(elem => elem.style.display = 'inline-block')
     }
 
-    return (
-        <>
-            <h2 id='title-app'>CV Generator</h2>
-            <form id="for-print" className="col s12" action="">
-                <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
-                <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} addExp={addExp} />
-                <ExperiencePro editionMode={editionMode} datas={dataExp} setDataExp={setDataExp} addExp={addExp} />
-                {editionMode ? (
-                    <Button type="submit" text="Valider" onClick={saveData} />
-                ) : (
-                    <div className='d-flex'>
-                        <Button type="button" text="Editer" onClick={saveData} />
-                        <Button type="button" text="Imprimer" onClick={printCV} />
-                        <Button type="button" text="Télécharger" onClick={downloadCV} />
-                    </div>
-                )}
+    const titleApp = dataProfil.jobtitle !== '' ? dataProfil.jobtitle : 'CV Generator'
 
-            </form>
-        </>
+    return (
+        <div className="row">
+            {!editionMode ? (
+                <h2 id='title-app'>{titleApp}</h2>
+            ) : (
+                <h2 id='title-app'>{titleApp}</h2>
+            )}
+            <div className="row">
+                <div className="d-flex">
+                    <h2 id='title-app'>{dataProfil.titleApp}</h2>
+                </div>
+                <form id="for-print" className="row" action="">
+                    <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
+                    <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} />
+                    <ExperiencePro editionMode={editionMode} datas={dataExp} setDataExp={setDataExp} />
+                    <Skills editionMode={editionMode} datas={dataSkills} setDataSkills={setDataSkills} />
+                    {editionMode ? (
+                        <Button type="submit" text="Valider" onClick={saveData} />
+                    ) : (
+                        <div className='d-flex'>
+                            <Button type="button" text="Editer" onClick={saveData} />
+                            <Button type="button" text="Imprimer" onClick={printCV} />
+                            <Button type="button" text="Télécharger" onClick={downloadCV} />
+                        </div>
+                    )}
+                </form>
+            </div>
+        </div>
     )
 }
 
