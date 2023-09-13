@@ -4,19 +4,16 @@ import Profil from './Profil'
 import FormationExp from './Formation'
 import { Button } from './ui/Button'
 import ExperiencePro from './ExperiencePro'
-import Skills from './Skills'
 
 const CVGenerator = ({
     editionMode,
     dataProfil,
     dataFormation,
     dataExp,
-    dataSkills,
     setEditionMode,
     setDataProfil,
     setDataFormation,
     setDataExp,
-    setDataSkills
 }) => {
 
     const saveData = () => {
@@ -53,7 +50,6 @@ const CVGenerator = ({
                     <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
                     <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} />
                     <ExperiencePro editionMode={editionMode} datas={dataExp} setDataExp={setDataExp} />
-                    <Skills editionMode={editionMode} datas={dataSkills} setDataSkills={setDataSkills} />
                     {editionMode ? (
                         <Button type="submit" text="Valider" onClick={saveData} />
                     ) : (

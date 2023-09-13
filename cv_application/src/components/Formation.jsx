@@ -44,7 +44,7 @@ const FormationExp = ({
 
             {editionMode && (
                 <>
-                    <div className="row d-flex flex-column">
+                    <div className="row d-flex flex-column w-100">
                         <Input
                             htmlFor="formationName"
                             type="text" name="name"

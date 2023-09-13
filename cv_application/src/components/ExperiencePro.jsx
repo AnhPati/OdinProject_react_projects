@@ -18,7 +18,6 @@ const ExperiencePro = ({
         const newValues = { ...experienceProValues, [event.target.name]: event.target.value }
         setExperienceProValue(newValues)
     }
-    console.log(datas)
 
     const addExp = (event) => {
         const inputs = event.target.parentElement.querySelectorAll('input')
@@ -43,7 +42,7 @@ const ExperiencePro = ({
             <h2>Expériences professionnelles</h2>
             {editionMode && (
                 <>
-                    <div className="row d-flex flex-column">
+                    <div className="row d-flex flex-column w-100">
                         <Input
                             htmlFor="companyName"
                             type="text" name="name"

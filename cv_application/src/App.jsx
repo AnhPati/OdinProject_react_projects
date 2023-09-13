@@ -14,7 +14,6 @@ function App() {
   })
   const [userFormation, setUserFormation] = useState([])
   const [userExp, setUserExp] = useState([])
-  const [userSkills, setUserSkills] = useState([])
 
   return (
     <div className="main-container container">
@@ -23,12 +22,10 @@ function App() {
         dataProfil={userProfil}
         dataFormation={userFormation}
         dataExp={userExp}
-        dataSkills={userSkills}
         setEditionMode={setEditionMode}
         setDataProfil={setUserProfil}
         setDataFormation={setUserFormation}
         setDataExp={setUserExp}
-        setDataSkills={setUserSkills}
       />
     </div>
   )
