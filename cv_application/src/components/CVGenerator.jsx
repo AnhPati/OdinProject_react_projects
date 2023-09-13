@@ -43,19 +43,12 @@ const CVGenerator = ({
         hideElements.map(elem => elem.style.display = 'inline-block')
     }
 
-    const titleApp = dataProfil.jobtitle !== '' ? dataProfil.jobtitle : 'CV Generator'
+    const printHide = (dataProfil.jobtitle !== '' && !editionMode) ? 'hide' : ''
 
     return (
         <div className="row">
-            {!editionMode ? (
-                <h2 id='title-app'>{titleApp}</h2>
-            ) : (
-                <h2 id='title-app'>{titleApp}</h2>
-            )}
             <div className="row">
-                <div className="d-flex">
-                    <h2 id='title-app'>{dataProfil.titleApp}</h2>
-                </div>
+                <h2 id='title-app' className={printHide}>CV Generator</h2>
                 <form id="for-print" className="row" action="">
                     <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
                     <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} />

@@ -18,9 +18,10 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
     }
 
     const titleProfil = datas.jobtitle !== '' ? datas.jobtitle : 'Informations générales'
+    const printLayout = editionMode ? '' : 'd-flex'
 
     return (
-        <div className="info-container row">
+        <div className={`info-container row ${printLayout}`}>
             {editionMode ? (
                 <>
                     <h2>Informations générales</h2>
@@ -105,13 +106,8 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
             ) : (
                 <>
                     <div className='col s3'>
-                        <div className="row">
-                            <p>
-                                {datas.lastname}
-                            </p>
-                            <p>
-                                {datas.firstname}
-                            </p>
+                        <div>
+                            <p>{datas.lastname} {datas.firstname}</p>
                         </div>
                         <div>
                             <p>{datas.adress !== '' ? 'Adresse' : ''}</p>
@@ -126,10 +122,10 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
                             <p>{datas.email}</p>
                         </div>
                     </div>
-                    <div className='col s9'>
-                        <h2>{titleProfil}</h2>
+                    <div className="col s9 d-flex">
+                        <h2 className="valign-wrapper center-align">{titleProfil}</h2>
                         {!editionMode && (
-                            <div className="col s4">
+                            <div className="col s4  valign-wrapper">
                                 <div className="photo-img">
                                     <img src={datas.photo} alt="" className="circle responsive-img" />
                                 </div>
