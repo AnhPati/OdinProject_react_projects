@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import '../styles/general-info.css'
 import '../styles/styles.css'
 
 import { Input } from './ui/Input'

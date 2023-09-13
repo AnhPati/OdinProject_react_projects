@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import '../styles/formations.css'
 import '../styles/styles.css'
 import { Button } from './ui/Button'
 import ExpContainer from './ExpContainer'
@@ -38,9 +37,11 @@ const FormationExp = ({
         setDataFormation(copyDatasArray)
     }
 
+    const printLayout = editionMode ? '' : 'right-align'
+
     return (
         <div id="formations" className="formations-container row d-flex flex-column">
-            <h2>Formations</h2>
+            <h3 className={printLayout}>Formations</h3>
 
             {editionMode && (
                 <>

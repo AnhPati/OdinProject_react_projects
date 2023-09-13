@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import '../styles/exp-pro.css'
 import '../styles/styles.css'
 import { Button } from './ui/Button'
 import { Input } from './ui/Input'
@@ -37,9 +36,11 @@ const ExperiencePro = ({
         setDataFormation(copyDatasArray)
     }
 
+    const printLayout = editionMode ? '' : 'right-align'
+
     return (
         <div id="exp-pro" className="expPro-container row d-flex flex-column">
-            <h2>Expériences professionnelles</h2>
+            <h3 className={printLayout}>Expériences professionnelles</h3>
             {editionMode && (
                 <>
                     <div className="row d-flex flex-column w-100">
@@ -63,7 +64,7 @@ const ExperiencePro = ({
                             htmlFor="companyLocation"
                             type="text" name="location"
                             id="companyLocation"
-                            text="Intitulé du poste :"
+                            text="Lieu :"
                             onChange={handleChange}
                             value={experienceProValues.location || ''}
                         />

@@ -1,5 +1,4 @@
 import '../styles/styles.css'
-import '../styles/creation-cv.css'
 import Profil from './Profil'
 import FormationExp from './Formation'
 import { Button } from './ui/Button'
@@ -18,7 +17,6 @@ const CVGenerator = ({
 
     const saveData = () => {
         setDataProfil(dataProfil)
-        setDataSkills(dataSkills)
         setEditionMode(!editionMode)
     }
 
