@@ -43,7 +43,7 @@ const CVGenerator = ({
     return (
         <div className="row">
             <div className="row">
-                <h2 id='title-app' className={printHide}>CV Generator</h2>
+                <h2 id='title-app' className={`right-align ${printHide}`}>CV Generator</h2>
                 <form id="for-print" className="row" action="">
                     <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
                     <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} />

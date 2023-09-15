@@ -22,7 +22,7 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
         <div className={`section-layout mb-0 row ${printLayout}`}>
             {editionMode ? (
                 <>
-                    <h2 className="title-exp">Informations générales</h2>
+                    <h3 className="title-exp">Informations générales</h3>
                     <div className="row">
                         <Input
                             htmlFor="jobtitle"
@@ -121,7 +121,7 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
                         </div>
                     </div>
                     <div className="col s8 d-flex">
-                        <h2 className="valign-wrapper center-align">{titleProfil}</h2>
+                        <h3 className="valign-wrapper center-align">{titleProfil}</h3>
                         {!editionMode && (
                             <div className="col s4  valign-wrapper">
                                 <div className="photo-img">
