@@ -158,8 +158,8 @@ En mode impression, nous avons 3 options :
 
 ![Vue du mode impression](./src/assets/img/cv_generator-printmode.png)
 
-## Possibles améliorations futures.
+## Possibles améliorations futures
 
 - Conserver les données dans une API, ce qui évitera de passer tous les états en accessoires depuis le composant principal.
 - Améliorer le CSS existant, pour faire un design plus proche d'un CV professionnel. Pourquoi pas ajouter un jeu de feuilles CSS pour des design différents.
-- Rajouter des champs au formulaire, particulièrements les **Skills** qui réunira les compétences, les langues et les hobbies. Un composant pour gérer les templates de CV sera également nécessaire si l'on implémente un jeu de feuilles de styles CSS.
+- Rajouter des champs au formulaire, particulièrement ceux des **Skills** qui réunira les compétences, les langues et les hobbies. Un composant pour gérer les templates de CV sera également nécessaire si l'on implémente un jeu de feuilles de styles CSS.
