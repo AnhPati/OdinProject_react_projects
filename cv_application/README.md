@@ -47,7 +47,12 @@ const [editionMode, setEditionMode] = useState(false)
     }
  ```
  - ### Les formations et les expériences professionnelles
- sont deux composants très similaires, mais je devais les séparer car l'affichage conditionnel devenait trop pénible. Tous deux ont un état dans le composant **<App/>**, des tableaux afin de pouvoir créer l'affichage des expériences dynamiquement avec **map()**. Mais ces deux composants ont également leur propre état, un objet qui récupère tous les champs avant de les ajouter, avec une méthode que l'on passe à l'évènement **click** d'un bouton, au tableau des expériences correpondant.
+ sont deux composants très similaires, mais je devais les séparer car l'affichage conditionnel devenait trop pénible. Tous deux ont un état dans le composant **<App/>**, des tableaux afin de pouvoir créer l'affichage des expériences dynamiquement avec **map()**.
+ 
+ ![Vue du mode edition](./src/assets/img/cv_generator-formation.png)
+ ![Vue du mode edition](./src/assets/img/cv_generator-experiences_pro.png)
+ 
+ Mais ces deux composants ont également leur propre état, un objet qui récupère tous les champs avant de les ajouter, avec une méthode que l'on passe à l'évènement **click** d'un bouton, au tableau des expériences correpondant.
  ```js
  const [formationValues, setFormationValue] = useState({})
 
@@ -143,3 +148,18 @@ const [editionMode, setEditionMode] = useState(false)
  ```js
  const Input = ({ htmlFor, type, name, id, text, required = false, classDiv, onChange, value, src }) => {}
  ```
+
+## Rendu impression et téléchargement
+
+En mode impression, nous avons 3 options :
+- Editer, qui permet de revenir sur le mode édition de son CV;
+- Imprimer, qui lance l'impression.
+- Télécharger, qui cache les boutons et lance une alerte, pour télécharger la page au format PDF il faudra pour le moment utiliser un plugin de navigateur.
+
+![Vue du mode edition](./src/assets/img/cv_generator-printmode.png)
+
+## Possibles améliorations futures.
+
+- Conserver les données dans une API, ce qui évitera de passer tous les états en accessoires depuis le composant principal.
+- Améliorer le CSS existant, pour faire un design plus proche d'un CV professionnel. Pourquoi pas ajouter un jeu de feuilles CSS pour des design différents.
+- Rajouter des champs au formulaire, particulièrements les **Skills** qui réunira les compétences, les langues et les hobbies. Un composant pour gérer les templates de CV sera également nécessaire si l'on implémente un jeu de feuilles de styles CSS.
