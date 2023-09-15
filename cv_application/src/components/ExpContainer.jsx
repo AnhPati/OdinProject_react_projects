@@ -6,9 +6,8 @@ const ExpContainer = ({ id, datas, removeExp, editionMode }) => {
     return (
         <div id={id} className={`${hasContent} col s12`}>
             {datas.length > 0 && datas.map((data) => {
-                const date = id === 'formations-exp' ? data.year : [data.startDate, data.endDate]
-                const margin = datas.indexOf(data) === datas.length - 1 ? 'mb-0' : ''
-
+                const date = id === 'formations-exp' ? data.year : `Du ${data.startDate} ${data.endDate ? `au ${data.endDate}` : `à aujourd'hui`}`
+                const lastExp = datas.indexOf(data) === datas.length - 1 ? true : false
                 return (
                     <>
                         <ExpResume
@@ -20,7 +19,8 @@ const ExpContainer = ({ id, datas, removeExp, editionMode }) => {
                             location={data.location}
                             responsabilities={data.responsabilities}
                             date={date}
-                            margin={margin}
+                            margin="mb-0"
+                            last={lastExp}
                         />
                         {editionMode && (
                             <Button key={`${data.id}-btn`} type="button" text="Supprimer" onClick={removeExp} />

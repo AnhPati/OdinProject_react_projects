@@ -1,9 +1,9 @@
-export const ExpResume = ({ container, name, title, date, responsabilities, location, id, margin }) => {
+export const ExpResume = ({ container, name, title, date, responsabilities, location, id, margin, last }) => {
     return (
         <>
             {container === 'formations-exp' ? (
-                <div id={id} className={`row ${margin}`}>
-                    <div className="col s4 side-container pb-20">
+                <div id={id} className={`d-flex row ${margin} ${last && 'lastExp'}`}>
+                    <div className={`col s4 side-container pb-20 ${last && 'side-lastExp'}`}>
                         <h6>Année {date}</h6>
                         <h6>{location}</h6>
                     </div>
@@ -14,8 +14,8 @@ export const ExpResume = ({ container, name, title, date, responsabilities, loca
                     </div>
                 </div>
             ) : (
-                <div id={id} className={`row ${margin}`}>
-                    <div className="col s4 side-container pb-20">
+                <div id={id} className={`d-flex row ${margin} ${last && 'lastExp'}`}>
+                    <div className={`col s4 side-container pb-20 ${last && 'side-lastExp'}`}>
                         <h6>{title}</h6>
                         <h6>{name} - {location}</h6>
                         <h6>{date}</h6>

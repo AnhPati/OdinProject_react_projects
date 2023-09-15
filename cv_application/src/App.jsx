@@ -15,8 +15,10 @@ function App() {
   const [userFormation, setUserFormation] = useState([])
   const [userExp, setUserExp] = useState([])
 
+  const editionModeColor = editionMode ? 'edit-backgroundColor' : 'print-backgroundColor'
+
   return (
-    <div className="main-container container">
+    <div className={`main-container container ${editionModeColor}`}>
       <CVGenerator
         editionMode={editionMode}
         dataProfil={userProfil}

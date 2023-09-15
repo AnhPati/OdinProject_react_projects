@@ -47,6 +47,10 @@
     margin-bottom: 0;
 }
 
+.mt-0 {
+    margin-top: 0;
+}
+
 .pb-20 {
     padding-bottom: 20px;
 }
@@ -57,11 +61,46 @@
 }
 
 /*Print*/
+.print-backgroundColor {
+    background-color: rgba(240, 230, 140, 0.6);
+}
+
+.edit-backgroundColor {
+    background-color: #FFF;
+}
+
+.main-container {
+    padding-right: 1rem;
+    color: rgb(37, 35, 35);
+}
+
 .side-container {
     background-color: khaki;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    color: rgb(37, 35, 35);
+    font-weight: 600;
+}
+
+.lastExp {
+    padding-bottom: 2rem;
+}
+
+.side-lastExp {
+    margin-bottom: -1rem;
 }
 
 .section-layout {
     min-height: 200px;
-    border-bottom: none;
+}
+
+.button-container {
+    background-color: #FFF;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: -1rem;
+}
+
+.lastExp {
+    margin-bottom: -1rem;
 }

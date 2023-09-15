@@ -42,16 +42,16 @@ const CVGenerator = ({
 
     return (
         <div className="row">
-            <div className="row">
+            <div className="row mb-0">
                 <h2 id='title-app' className={`right-align ${printHide}`}>CV Generator</h2>
-                <form id="for-print" className="row" action="">
+                <form id="for-print" className="row mb-0" action="">
                     <Profil editionMode={editionMode} datas={dataProfil} setDataProfil={setDataProfil} />
                     <FormationExp editionMode={editionMode} datas={dataFormation} setDataFormation={setDataFormation} />
                     <ExperiencePro editionMode={editionMode} datas={dataExp} setDataExp={setDataExp} />
                     {editionMode ? (
                         <Button type="submit" text="Valider" onClick={saveData} />
                     ) : (
-                        <div className='d-flex flex-around'>
+                        <div className='button-container d-flex flex-around'>
                             <Button type="button" text="Editer" onClick={saveData} />
                             <Button type="button" text="Imprimer" onClick={printCV} />
                             <Button type="button" text="Télécharger" onClick={downloadCV} />

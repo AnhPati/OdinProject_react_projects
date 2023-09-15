@@ -105,19 +105,19 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
                 <>
                     <div className="col s4 side-container pb-20">
                         <div>
-                            <p>{datas.lastname} {datas.firstname}</p>
+                            <h5>{datas.lastname} {datas.firstname}</h5>
                         </div>
                         <div>
-                            <p>{datas.adress !== '' ? 'Adresse' : ''}</p>
-                            <p>{datas.adress}</p>
+                            <p className="mb-0">{datas.adress !== '' ? 'Adresse' : ''}</p>
+                            <p className="mt-0">{datas.adress}</p>
                         </div>
                         <div>
-                            <p>{datas.phone !== '' ? 'Téléphone' : ''}</p>
-                            <p>{datas.phone}</p>
+                            <p className="mb-0">{datas.phone !== '' ? 'Téléphone' : ''}</p>
+                            <p className="mt-0">{datas.phone}</p>
                         </div>
                         <div>
-                            <p>{datas.email !== '' ? 'E-mail' : ''}</p>
-                            <p>{datas.email}</p>
+                            <p className="mb-0">{datas.email !== '' ? 'E-mail' : ''}</p>
+                            <p className="mt-0">{datas.email}</p>
                         </div>
                     </div>
                     <div className="col s8 d-flex">
