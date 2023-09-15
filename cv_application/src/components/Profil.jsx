@@ -19,7 +19,7 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
     const printLayout = editionMode ? '' : 'd-flex'
 
     return (
-        <div className={`mb-0 row ${printLayout}`}>
+        <div className={`section-layout mb-0 row ${printLayout}`}>
             {editionMode ? (
                 <>
                     <h2 className="title-exp">Informations générales</h2>

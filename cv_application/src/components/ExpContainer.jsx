@@ -2,9 +2,9 @@ import { ExpResume } from "./ExpResume";
 import { Button } from "./ui/Button";
 
 const ExpContainer = ({ id, datas, removeExp, editionMode }) => {
-
+    const hasContent = datas.length > 0 ? '' : 'd-none'
     return (
-        <div id={id} className="col s12">
+        <div id={id} className={`${hasContent} col s12`}>
             {datas.length > 0 && datas.map((data) => {
                 const date = id === 'formations-exp' ? data.year : [data.startDate, data.endDate]
                 const margin = datas.indexOf(data) === datas.length - 1 ? 'mb-0' : ''

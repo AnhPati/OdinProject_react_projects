@@ -37,13 +37,17 @@ const FormationExp = ({
         setDataFormation(copyDatasArray)
     }
 
-    const printLayout = editionMode ? '' : 'right-align'
-
+    const printLayout = editionMode ? '' : 'col s8 right-align'
+    const printWithoutContent = datas.length < 1 ? 'h-medium' : ''
+    console.log('Datas length formation :')
+    console.log(datas.length)
     return (
-        <div id="formations" className="mb-0 formations-container row d-flex flex-column">
+        <div id="formations" className="section-layout mb-0 formations-container row d-flex flex-column">
             <div className="d-flex">
-                <div className="col s4 side-container"></div>
-                <h3 className={`col s8 title-exp ${printLayout}`}>Formations</h3>
+                {!editionMode && (
+                    <div className={`col s4 side-container ${printWithoutContent}`}></div>
+                )}
+                <h3 className={`title-exp ${printLayout}`}>Formations</h3>
             </div>
 
             {editionMode && (

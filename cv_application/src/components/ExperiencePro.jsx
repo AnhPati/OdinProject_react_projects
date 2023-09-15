@@ -36,13 +36,17 @@ const ExperiencePro = ({
         setDataFormation(copyDatasArray)
     }
 
-    const printLayout = editionMode ? '' : 'right-align'
-
+    const printLayout = editionMode ? '' : 'col s8 right-align'
+    const printWithoutContent = datas.length < 1 ? 'h-medium' : ''
+    console.log('Datas length pro :')
+    console.log(datas.length)
     return (
-        <div id="exp-pro" className="mb-0 expPro-container row d-flex flex-column">
+        <div id="exp-pro" className="section-layout mb-0 expPro-container row d-flex flex-column">
             <div className="d-flex">
-                <div className="col s4 side-container"></div>
-                <h3 className={`col s8 title-exp ${printLayout}`}>Expériences professionnelles</h3>
+                {!editionMode && (
+                    <div className={`col s4 side-container ${printWithoutContent}`}></div>
+                )}
+                <h3 className={`title-exp ${printLayout}`}>Expériences professionnelles</h3>
             </div>
             {editionMode && (
                 <>

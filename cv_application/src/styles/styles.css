@@ -1,4 +1,8 @@
 /*Layout*/
+.d-none {
+    display: none;
+}
+
 .d-flex {
     display: flex;
 }
@@ -29,9 +33,12 @@
     width: 100%
 }
 
+.h-medium {
+    height: 200px;
+}
+
 /*Typography*/
 .title-exp {
-    border-bottom: darkred solid 1px;
     margin: 0;
 }
 
@@ -52,4 +59,9 @@
 /*Print*/
 .side-container {
     background-color: khaki;
+}
+
+.section-layout {
+    min-height: 200px;
+    border-bottom: none;
 }
