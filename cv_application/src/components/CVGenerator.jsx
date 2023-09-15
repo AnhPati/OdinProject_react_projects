@@ -51,7 +51,7 @@ const CVGenerator = ({
                     {editionMode ? (
                         <Button type="submit" text="Valider" onClick={saveData} />
                     ) : (
-                        <div className='d-flex'>
+                        <div className='d-flex flex-around'>
                             <Button type="button" text="Editer" onClick={saveData} />
                             <Button type="button" text="Imprimer" onClick={printCV} />
                             <Button type="button" text="Télécharger" onClick={downloadCV} />

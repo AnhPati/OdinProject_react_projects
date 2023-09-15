@@ -8,6 +8,11 @@
     align-items: center;
 }
 
+.flex-around {
+    justify-content: space-around;
+    align-items: center;
+}
+
 .flex-end {
     align-items: flex-end;
 }
@@ -24,7 +29,27 @@
     width: 100%
 }
 
+/*Typography*/
+.title-exp {
+    border-bottom: darkred solid 1px;
+    margin: 0;
+}
+
+/*Helpers*/
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
 /*Input*/
 .photo-img {
     margin-right: 5%;
+}
+
+/*Print*/
+.side-container {
+    background-color: khaki;
 }

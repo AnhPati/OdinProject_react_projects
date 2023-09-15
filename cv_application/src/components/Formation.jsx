@@ -40,8 +40,11 @@ const FormationExp = ({
     const printLayout = editionMode ? '' : 'right-align'
 
     return (
-        <div id="formations" className="formations-container row d-flex flex-column">
-            <h3 className={printLayout}>Formations</h3>
+        <div id="formations" className="mb-0 formations-container row d-flex flex-column">
+            <div className="d-flex">
+                <div className="col s4 side-container"></div>
+                <h3 className={`col s8 title-exp ${printLayout}`}>Formations</h3>
+            </div>
 
             {editionMode && (
                 <>

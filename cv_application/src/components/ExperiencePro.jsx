@@ -39,8 +39,11 @@ const ExperiencePro = ({
     const printLayout = editionMode ? '' : 'right-align'
 
     return (
-        <div id="exp-pro" className="expPro-container row d-flex flex-column">
-            <h3 className={printLayout}>Expériences professionnelles</h3>
+        <div id="exp-pro" className="mb-0 expPro-container row d-flex flex-column">
+            <div className="d-flex">
+                <div className="col s4 side-container"></div>
+                <h3 className={`col s8 title-exp ${printLayout}`}>Expériences professionnelles</h3>
+            </div>
             {editionMode && (
                 <>
                     <div className="row d-flex flex-column w-100">

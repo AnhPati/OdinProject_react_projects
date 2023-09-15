@@ -19,10 +19,10 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
     const printLayout = editionMode ? '' : 'd-flex'
 
     return (
-        <div className={`info-container row ${printLayout}`}>
+        <div className={`mb-0 row ${printLayout}`}>
             {editionMode ? (
                 <>
-                    <h2>Informations générales</h2>
+                    <h2 className="title-exp">Informations générales</h2>
                     <div className="row">
                         <Input
                             htmlFor="jobtitle"
@@ -103,7 +103,7 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
                 </>
             ) : (
                 <>
-                    <div className='col s3'>
+                    <div className="col s4 side-container pb-20">
                         <div>
                             <p>{datas.lastname} {datas.firstname}</p>
                         </div>
@@ -120,7 +120,7 @@ const Profil = ({ editionMode, datas, setDataProfil }) => {
                             <p>{datas.email}</p>
                         </div>
                     </div>
-                    <div className="col s9 d-flex">
+                    <div className="col s8 d-flex">
                         <h2 className="valign-wrapper center-align">{titleProfil}</h2>
                         {!editionMode && (
                             <div className="col s4  valign-wrapper">
