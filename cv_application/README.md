@@ -14,7 +14,7 @@ Une application React qui génère un CV à partir des données renseignés par 
 
 ## Apprentissage
 
-C'est un projet React somme toute assez simple. Il a fallu tout d'abord établir la structure et le rendu entre le mode "édition" et le mode "à imprimer".
+C'est un projet React somme toute assez simple. Il a fallu tout d'abord établir la structure et le rendu entre le mode "édition" et le mode "impression".
 
 Comme le projet est rattaché à la section "States and Effects" du cursus React de [theodinproject](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/react#states-and-effects), j'ai pris le partie de n'utiliser que ce qui a été vu dans le cours jusqu'à maintenant.
 
@@ -49,8 +49,8 @@ const [editionMode, setEditionMode] = useState(false)
  - ### Les formations et les expériences professionnelles
  sont deux composants très similaires, mais je devais les séparer car l'affichage conditionnel devenait trop pénible. Tous deux ont un état dans le composant **<App/>**, des tableaux afin de pouvoir créer l'affichage des expériences dynamiquement avec **map()**.
  
- ![Vue du mode edition](./src/assets/img/cv_generator-formation.png)
- ![Vue du mode edition](./src/assets/img/cv_generator-experiences_pro.png)
+ ![Vue de la section "Formations" en mode edition](./src/assets/img/cv_generator-formation.png)
+ ![Vue de la section "Expériences professionnelles" en mode edition](./src/assets/img/cv_generator-experiences_pro.png)
  
  Mais ces deux composants ont également leur propre état, un objet qui récupère tous les champs avant de les ajouter, avec une méthode que l'on passe à l'évènement **click** d'un bouton, au tableau des expériences correpondant.
  ```js
@@ -156,7 +156,7 @@ En mode impression, nous avons 3 options :
 - Imprimer, qui lance l'impression.
 - Télécharger, qui cache les boutons et lance une alerte, pour télécharger la page au format PDF il faudra pour le moment utiliser un plugin de navigateur.
 
-![Vue du mode edition](./src/assets/img/cv_generator-printmode.png)
+![Vue du mode impression](./src/assets/img/cv_generator-printmode.png)
 
 ## Possibles améliorations futures.
 
