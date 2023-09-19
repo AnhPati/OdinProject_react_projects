@@ -1,7 +1,7 @@
-const Card = () => {
+const Card = ({ src, alt }) => {
     return (
         <div>
-            Je suis une carte
+            <img src={src} alt={alt} />
         </div>
     );
 }

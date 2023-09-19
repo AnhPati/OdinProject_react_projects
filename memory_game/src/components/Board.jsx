@@ -1,9 +1,12 @@
 import Card from "./Card";
+import { v4 as uuidv4 } from 'uuid';
 
-const Board = () => {
+const Board = ({ images }) => {
     return (
         <div>
-            <Card />
+            {images.map(image => (
+                <Card key={image.id} src={image.src} alt={image.alt} />
+            ))}
         </div>
     );
 }

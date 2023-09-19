@@ -1,44 +1,41 @@
 import { useEffect, useState } from "react";
 import Board from "./Board";
 import Header from "./Header";
-import api from "../api/api";
-import { v4 as uuidv4 } from 'uuid';
+
 
 const MemoryGame = () => {
-    const [pokemons, setPokemons] = useState([])
-    const [isMounted, setIsMounted] = useState(false)
+    const [images, setImages] = useState([])
 
-    useEffect(() => {
-        !isMounted &&
-            api.getImages().then(json => {
-                setPokemons(json)
-                setIsMounted(true)
+    const getImages = () => {
+        fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20', {
+            type: 'Get'
+        }).then(response => response.json())
+            .then(json => {
+                const results = json.results
+
+                for (let i = 0; i < results.length; i++) {
+                    fetch(`https://pokeapi.co/api/v2/pokemon/${results[i].name}/`, {
+                        type: 'Get'
+                    }).then(result => result.json())
+                        .then(pokemon => {
+                            const id = pokemon.id
+                            const alt = pokemon.name
+                            const src = pokemon.sprites.front_default
+                            setImages(prevPokemons => [...prevPokemons, { id, alt, src }])
+                        })
+                }
             })
-    }, [isMounted])
-
-    console.log(pokemons)
-    const image = (id) => {
-        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     }
+    console.log('POKE')
+    console.log(images)
+    useEffect(() => {
+        getImages()
+    }, [])
 
     return (
         <div>
-            <div>
-                <img src={image('120')} alt="" />
-            </div>
-            {/* <div>
-                {images.map(image => {
-                    console.log(image)
-                    return (
-                        <div key={uuidv4()}>
-                            <p>{image.name}</p>
-                            <img src={image.url} alt={image.name} />
-                        </div>
-                    )
-                })}
-            </div> */}
             <Header />
-            <Board />
+            <Board images={images} />
         </div >
     );
 }
