@@ -7,7 +7,7 @@ const MemoryGame = () => {
     const [images, setImages] = useState([])
 
     const getImages = () => {
-        fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20', {
+        fetch('https://pokeapi.co/api/v2/pokemon/?limit=18&offset=18', {
             type: 'Get'
         }).then(response => response.json())
             .then(json => {
