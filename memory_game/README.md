@@ -135,7 +135,7 @@ C'est la méthode **handleScore()** qui s'occupe, entre autre, de mettre à jour
 
  l'autre pour annoncer la victoire.
 
- ![Vue de la section "Formations" en mode edition](./src/assets/img/memory_game-succes_toast.gif)
+ ![Vue de la section "Formations" en mode edition](./src/assets/img/memory_game-success_toast.gif)
 
 ## Responsive
 Vu que l'application était plutôt simple à concevoir, j'ai un peu plus travailler l'aspect visuel. Notamment le responsive qui permet de la consulter convenablement sur tous les supports.
