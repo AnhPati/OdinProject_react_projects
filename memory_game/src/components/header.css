@@ -2,6 +2,22 @@
     width: 100%;
     background-color: #000000;
     color: #84739c;
-    text-shadow: 1px 1px 1px white;
-    padding: 0 10px 25px 10px;
+    text-shadow: 1px 1px 1px rgba(247, 181, 140, 1);
+    padding-bottom: 25px;
+    outline: #000 solid 1px;
+    flex-wrap: wrap;
+}
+
+.header-container h3 {
+    padding: 20px 20px;
+    border: 5px double;
+    background: #FFF;
+    min-width: 574px;
+}
+
+@media (max-width: 625px) {
+    .header-container h3 {
+        min-width: auto;
+        font-size: 2.5rem;
+    }
 }

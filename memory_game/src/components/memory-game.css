@@ -4,3 +4,9 @@
     background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(247, 181, 140, 1) 0%, rgba(255, 255, 255, 1) 75%);
     border: 25px solid #000000;
 }
+
+@media (max-width: 625px) {
+    .game-container {
+        border: 15px solid #000000;
+    }
+}

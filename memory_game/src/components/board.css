@@ -3,3 +3,9 @@
     padding: 30px 30px;
     flex: 2;
 }
+
+@media (max-width: 625px) {
+    .board-container {
+        padding: 15px 15px;
+    }
+}
