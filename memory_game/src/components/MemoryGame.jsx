@@ -13,10 +13,6 @@ const MemoryGame = () => {
         score: 0,
         highScore: 0
     })
-    const [victory, setVictory] = useState({
-        succes: false,
-        failure: false
-    })
 
     const getImages = () => {
         fetch('https://pokeapi.co/api/v2/pokemon/?limit=18&offset=18', {
@@ -45,9 +41,6 @@ const MemoryGame = () => {
 
     const handleScore = (event) => {
         const lastImage = event.currentTarget.firstChild
-        if (victory.succes || victory.failure) {
-            setVictory({ succes: false, failure: false })
-        }
 
         if (viewedImages.indexOf(lastImage.src) === -1) {
             let newCount = count.score + 1
