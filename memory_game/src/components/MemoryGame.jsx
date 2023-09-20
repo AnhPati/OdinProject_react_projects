@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Board from "./Board";
 import Header from "./Header";
+import { toast, Toaster } from "react-hot-toast";
 import './memory-game.css'
 import '../styles/styles.css'
 
@@ -11,6 +12,10 @@ const MemoryGame = () => {
     const [count, setCount] = useState({
         score: 0,
         highScore: 0
+    })
+    const [victory, setVictory] = useState({
+        succes: false,
+        failure: false
     })
 
     const getImages = () => {
@@ -40,6 +45,9 @@ const MemoryGame = () => {
 
     const handleScore = (event) => {
         const lastImage = event.currentTarget.firstChild
+        if (victory.succes || victory.failure) {
+            setVictory({ succes: false, failure: false })
+        }
 
         if (viewedImages.indexOf(lastImage.src) === -1) {
             let newCount = count.score + 1
@@ -52,17 +60,14 @@ const MemoryGame = () => {
             } else {
                 setCount({ ...count, score: 0 })
             }
-            alert('Vous avez perdu !')
-            return setViewedImages([])
+
+            setViewedImages([])
+            return toast.error('Dommage...')
         }
-        console.log(`Score : ${count.score}`)
-        console.log(`Taille tableau initial : ${images.length}`)
-        console.log(`Taille tableau modifié : ${viewedImages.length}`)
-        console.log(viewedImages)
 
         if (viewedImages.length === images.length - 1) {
-            alert('Vous avez gagné !')
-            return setViewedImages([])
+            setViewedImages([])
+            return toast.success('Bien joué !')
         } else if (count.score > 0) {
             images.sort(() => Math.random() - 0.5);
         }
@@ -70,10 +75,31 @@ const MemoryGame = () => {
 
     return (
         <div className="game-container d-flex flex-column column-between">
+            <Toaster
+                position="top-right"
+                toastOptions={{
+                    success: {
+                        style: {
+                            background: 'rgba(247, 181, 140, 1)',
+                            color: '#FFF',
+                            textShadow: '1px 1px 1px #84739c',
+                            border: '5px double'
+                        }
+                    },
+                    error: {
+                        style: {
+                            background: '#000',
+                            color: '#84739c',
+                            textShadow: '1px 1px 1px white',
+                            border: '5px double'
+                        }
+                    }
+                }}
+            />
             <Header score={count.score} highScore={count.highScore} />
             <Board images={images} handleClick={handleScore} />
         </div >
-    );
+    )
 }
 
 export default MemoryGame;

@@ -1,0 +1,9 @@
+.score-container {
+    padding: 0 20px;
+    border: 5px double;
+    background: #FFF;
+}
+
+.score-container h5 {
+    margin: .656rem 0 .656rem 0
+}
