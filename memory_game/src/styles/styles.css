@@ -1,0 +1,22 @@
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Colors*/
+.color-test {
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(247, 181, 140, 1) 0%, rgba(255, 255, 255, 1) 75%)
+}

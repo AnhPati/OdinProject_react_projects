@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Board from "./Board";
 import Header from "./Header";
+import './memory-game.css'
+import '../styles/styles.css'
 
 
 const MemoryGame = () => {
@@ -33,7 +35,7 @@ const MemoryGame = () => {
     }, [])
 
     return (
-        <div>
+        <div className="game-container d-flex flex-column flex-center">
             <Header />
             <Board images={images} />
         </div >

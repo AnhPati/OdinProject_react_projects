@@ -1,7 +1,10 @@
+import '../styles/styles.css'
+
 const Header = () => {
+    const title = 'Pokémons memory game'
     return (
-        <div>
-            <h3>Title</h3>
+        <div className="d-flex flex-between">
+            <h3>{title.toUpperCase()}</h3>
             <div>Count content</div>
         </div>
     );
