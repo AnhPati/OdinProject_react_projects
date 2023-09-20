@@ -35,7 +35,7 @@ const MemoryGame = () => {
     }, [])
 
     return (
-        <div className="game-container d-flex flex-column flex-center">
+        <div className="game-container d-flex flex-column column-between">
             <Header />
             <Board images={images} />
         </div >
