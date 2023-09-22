@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Board from "./Board";
 import Header from "./Header";
 import { toast, Toaster } from "react-hot-toast";
@@ -13,6 +13,9 @@ const MemoryGame = () => {
         score: 0,
         highScore: 0
     })
+    const [isInTransit, setIsInTransit] = useState(false)
+    const [victory, setVictory] = useState(false)
+    const [seconds, setSeconds] = useState(10)
 
     const getImages = () => {
         fetch('https://pokeapi.co/api/v2/pokemon/?limit=18&offset=18', {
@@ -41,6 +44,9 @@ const MemoryGame = () => {
 
     const handleScore = (event) => {
         const lastImage = event.currentTarget.firstChild
+        if (victory === true) {
+            setVictory(false)
+        }
 
         if (viewedImages.indexOf(lastImage.src) === -1) {
             let newCount = count.score + 1
@@ -55,14 +61,54 @@ const MemoryGame = () => {
             }
 
             setViewedImages([])
-            return toast.error('Dommage...')
+            toast.error('Dommage...')
+            return transition()
         }
 
         if (viewedImages.length === images.length - 1) {
+            if (count.score > count.highScore) {
+                const newHighScore = count.score + 1
+                setCount({ score: 0, highScore: newHighScore })
+            } else {
+                setCount({ ...count, score: 0 })
+            }
+
+            setVictory(true)
             setViewedImages([])
-            return toast.success('Bien joué !')
+            toast.success('Bien joué !')
+            return transition()
         } else if (count.score > 0) {
             images.sort(() => Math.random() - 0.5);
+        }
+    }
+
+    const transition = () => {
+        setIsInTransit(true)
+        timer()
+        const blackMirror = document.querySelector('.new-round')
+        blackMirror.classList.add("active")
+
+        setTimeout(function () {
+            blackMirror.classList.remove("active")
+        }, 5000)
+
+        setTimeout(function () {
+            return setIsInTransit(false)
+        }, 10000)
+    }
+
+    const secondsRef = useRef(seconds);
+    secondsRef.current = seconds;
+
+    const timer = () => {
+        console.log(`Seconds : ${seconds}`)
+        console.log(secondsRef.current)
+        if (secondsRef.current > 0) {
+            setSeconds(seconds => seconds - 1)
+            setTimeout(timer, 1000)
+        } else if (secondsRef.current === 0) {
+            clearTimeout(timer)
+            return setSeconds(seconds => seconds + 10)
         }
     }
 
@@ -90,7 +136,11 @@ const MemoryGame = () => {
                 }}
             />
             <Header score={count.score} highScore={count.highScore} />
-            <Board images={images} handleClick={handleScore} />
+            <Board images={images} isInTransit={isInTransit} handleClick={handleScore} />
+            <div className="new-round d-flex flex-column flex-center">
+                <h2>{victory ? 'Vous avez gagné !' : 'Vous avez perdu...'}</h2>
+                <h3>Une nouvelle ronde va débuter dans {seconds}.</h3>
+            </div>
         </div >
     )
 }

@@ -1,4 +1,4 @@
-.card .card-image:hover {
+.card .card-image.flash:hover {
     opacity: 1;
     animation: flash 1.5s;
     cursor: pointer;
