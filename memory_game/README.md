@@ -142,6 +142,12 @@ Vu que l'application était plutôt simple à concevoir, j'ai un peu plus travai
 
 ![Vue du mode impression](./src/assets/img/memory_game-responsive.png)
 
+## Derniers ajouts
+
+- Effets qui rendent plus visible la possibilité de clic sur les cartes (pointeur, animation de survol).
+- Ecrans de transition en cas de victoire ou de défaite.
+- Minuteur pour annoncer l'arrivée de la prochaine ronde.
+
 ## Possibles améliorations futures
 
 - Utiliser un **localStorage()** pour ne pas avoir à multiplier excessivement les appels API.
