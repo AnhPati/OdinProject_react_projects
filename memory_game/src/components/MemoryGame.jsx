@@ -101,8 +101,6 @@ const MemoryGame = () => {
     secondsRef.current = seconds;
 
     const timer = () => {
-        console.log(`Seconds : ${seconds}`)
-        console.log(secondsRef.current)
         if (secondsRef.current > 0) {
             setSeconds(seconds => seconds - 1)
             setTimeout(timer, 1000)
