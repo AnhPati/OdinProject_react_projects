@@ -152,4 +152,3 @@ Vu que l'application était plutôt simple à concevoir, j'ai un peu plus travai
 
 - Utiliser un **localStorage()** pour ne pas avoir à multiplier excessivement les appels API.
 - Proposer dans l'en-tête la possibilité de modifier les couleurs.
-- Une animation lors de la défaite et de la victoire pour remplacer les notifications.

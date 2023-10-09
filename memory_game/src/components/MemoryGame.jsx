@@ -137,7 +137,7 @@ const MemoryGame = () => {
             <Board images={images} isInTransit={isInTransit} handleClick={handleScore} />
             <div className="new-round d-flex flex-column flex-center">
                 <h2>{victory ? 'Vous avez gagné !' : 'Vous avez perdu...'}</h2>
-                <h3>Une nouvelle ronde va débuter dans {seconds}.</h3>
+                <h3>Une nouvelle ronde va débuter dans {seconds} seconde{seconds > 1 && "s"}.</h3>
             </div>
         </div >
     )
