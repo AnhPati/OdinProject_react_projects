@@ -1,6 +1,11 @@
+import Shop from "./Shop"
+
 const Home = () => {
     return (
-        <div>Home</div>
+        <div>Home
+
+            <Shop />
+        </div>
     )
 }
 
