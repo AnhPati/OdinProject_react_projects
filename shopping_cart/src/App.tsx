@@ -1,14 +1,15 @@
 import { useState } from "react"
-import Home from "./components/Home"
-import Shop from "./components/Shop"
+import { Outlet } from "react-router-dom"
+import Navbar from "./components/Navbar"
 
 function App() {
   const [productsCart, setProductsCart] = useState([])
+  const [isHome, setIsHome] = useState(true)
 
   return (
     <>
-      <Home />
-      <Shop />
+      <Navbar productsCart={{ productsCart }} isHome={isHome} setIsHome={setIsHome} />
+      <Outlet context={{ productsCart }} />
     </>
   )
 }
