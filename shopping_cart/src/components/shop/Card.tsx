@@ -17,12 +17,21 @@ const CardContainer = styled.li`
 const CardTitle = styled.h4`
     font-size: 1.2em;
     font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `
 
 const ImageContainer = styled.div`
     max-width: 100%;
     height: 200px;
     position: relative;
+`
+
+const CardImage = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 `
 
 const CardPrice = styled.h3`
@@ -37,13 +46,14 @@ const CardPrice = styled.h3`
     padding: 0.3em 0.3em 0.1em;
 `
 
-const CardImage = styled.img`
-    height: 100%;
-`
-
 const CardDescription = styled.p`
     font-size: 0.8em;
     font-weight: 400;
+    display: -webkit-box;
+    height: 65px;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 `
 
 const CardButtonsContainer = styled.div`

@@ -1,6 +1,12 @@
+import styled from "styled-components"
 import { useQuery } from "@tanstack/react-query"
 import { productsData } from "../../datas/datas"
 import { Card } from "./Card"
+
+const CardsContainer = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+`
 
 const CardList = () => {
     const queryKey = ['products',]
@@ -18,7 +24,7 @@ const CardList = () => {
             {isLoading && `En cours de chargement...`}
             {isError && ` Une erreur est survenue : ${error}`}
 
-            <ul>
+            <CardsContainer>
                 {data && data.map(product =>
                     <Card
                         key={product.id}
@@ -29,7 +35,7 @@ const CardList = () => {
                         price={product.price}
                     />
                 )}
-            </ul>
+            </CardsContainer>
         </div>
     )
 }
