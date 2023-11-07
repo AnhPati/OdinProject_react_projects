@@ -48,8 +48,7 @@ const CardDescription = styled.p`
 
 const CardButtonsContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 `
 
 export const Card = ({ id, title, description, image, price, addCart }) => {
