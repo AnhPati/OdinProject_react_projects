@@ -10,19 +10,19 @@ const CardList = () => {
         refetchOnWindowFocus: false
     })
 
-    isLoading && `En cours de chargement...`
-    isError && ` Une erreur est survenue : ${error}`
 
-    console.log("Products")
-    console.log(data)
 
     return (
         <div>
             CardList
+            {isLoading && `En cours de chargement...`}
+            {isError && ` Une erreur est survenue : ${error}`}
+
             <ul>
                 {data && data.map(product =>
                     <Card
                         key={product.id}
+                        id={product.id}
                         title={product.title}
                         description={product.description}
                         image={product.image}

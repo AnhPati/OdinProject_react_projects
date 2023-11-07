@@ -1,16 +1,16 @@
-export const Card = ({ title, description, image, price }) => {
-    const priceDecimal = (price.toString().slice(price.toString().indexOf('.') + 1).length < 2) && (price.toString().includes('.')) ? true : false
-    console.log(priceDecimal)
-    console.log('Taille')
-    console.log(title)
-    console.log(price.toString().slice(price.toString().indexOf('.')).length)
+import { CountButton } from "../utils/CountButton"
+
+export const Card = ({ id, title, description, image, price }) => {
+    const priceString = price.toString()
+    const priceDecimal = (priceString.slice(priceString.indexOf('.') + 1).length < 2) && (priceString.includes('.')) ? true : false
 
     return (
-        <li>
+        <li id={id}>
             <h4>{title}</h4>
             <img src={image} alt={title} />
             <p>{description}</p>
             <h3>{price + (priceDecimal && '0')} €</h3>
+            <CountButton />
         </li>
     )
 }
