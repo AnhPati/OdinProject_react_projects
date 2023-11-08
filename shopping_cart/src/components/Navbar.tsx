@@ -1,14 +1,15 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleLeft } from "@fortawesome/free-solid-svg-icons"
 import { faStore } from "@fortawesome/free-solid-svg-icons/faStore"
+import { CartButton } from "./utils/CartButton"
 
 const Navbar = ({ productsCart }) => {
-  const currentPage = document.URL
-  console.log('coucou')
-  console.log(currentPage)
-  const nextPage = currentPage === 'http://localhost:4000/shop' ? '' : 'shop'
-  const nextPageIcon = currentPage === 'http://localhost:4000/shop' ? faCircleLeft : faStore
+  const location = useLocation()
+
+  const nextPage = location.pathname === '/shop' ? '' : 'shop'
+  const nextPageIcon = location.pathname === '/shop' ? faCircleLeft : faStore
+  const pageTitle = location.pathname === '/shop' ? 'Shop' : 'Home'
 
   return (
     <div>
@@ -19,11 +20,10 @@ const Navbar = ({ productsCart }) => {
           </NavLink>
         </li>
         <li>
-          <h2>{ }</h2>
+          <h2>{pageTitle}</h2>
         </li>
-
         <li>
-
+          <CartButton productsNumber={productsCart.length} />
         </li>
       </ul>
     </div>
