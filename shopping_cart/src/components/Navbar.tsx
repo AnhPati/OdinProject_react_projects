@@ -74,7 +74,7 @@ const Navbar = ({ productsCart }) => {
           <NavbarTitle>{pageTitle}</NavbarTitle>
         </NavbarTitleContainer>
         <NavbarLink $isShop={isShop} >
-          <CartButton productsNumber={productsCart.length} />
+          <CartButton productsNumber={productsCart.length} colorShop={isShop} />
         </NavbarLink>
       </NavbarList>
     </NavbarContainer>
