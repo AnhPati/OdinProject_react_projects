@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Board from "./Board";
-import Header from "./Header";
+import Header from "./Header/Header";
 import { toast, Toaster } from "react-hot-toast";
 import './memory-game.css'
 import '../styles/styles.css'
