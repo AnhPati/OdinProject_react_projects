@@ -1,0 +1,29 @@
+.pixel_art-container {
+    padding: 5px 60px 90px 50px;
+    background: #FFF;
+}
+
+.pixel_art {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    box-shadow:
+        -25px 0 #000, -20px 0 #000, -15px 0 #000, -10px 0 #000, 40px 0 #000,
+        -30px 5px #000, -5px 5px #000, 35px 5px #000, 45px 5px #000,
+        -35px 10px #000, 0 10px #000, 35px 10px #000, 50px 10px #000,
+        -35px 15px #000, 0 15px #000, 35px 15px #000, 50px 15px #000,
+        -40px 20px #000, 5px 20px #000, 30px 20px #000, 55px 20px #000,
+        -45px 25px #000, -20px 25px #FFF, -15px 25px #000, 5px 25px #000, 30px 25px #000, 55px 25px #000,
+        -45px 30px #000, -20px 30px #000, -15px 30px #000, 10px 30px #000, 30px 30px #000, 55px 30px #000,
+        -45px 35px #000, -20px 35px #000, -15px 35px #000, 10px 35px #000, 35px 35px #000, 45px 35px #000, 50px 35px #000,
+        -40px 40px #000, 15px 40px #000, 35px 40px #000, 45px 40px #000,
+        -35px 45px #000, -30px 45px #000, 20px 45px #000, 30px 45px #000, 45px 45px #000,
+        -25px 50px #000, -20px 50px #000, -15px 50px #000, 0 50px #000, 20px 50px #000, 25px 50px #000, 40px 50px #000,
+        -20px 55px #000, -5px 55px #000, 25px 55px #000, 40px 55px #000,
+        -20px 60px #000, 0 60px #000, 5px 60px #000, 25px 60px #000, 35px 60px #000,
+        -25px 65px #000, -20px 65px #FFF, -15px 65px #000, 25px 65px #000, 30px 65px #000,
+        -20px 70px #000, -15px 70px #000, -10px 70px #000, 20px 70px #000, 25px 70px #000,
+        -5px 75px #000, 0 75px #000, 5px 75px #000, 15px 75px #000, 20px 75px #000,
+        0 80px #000, 5px 80px #FFF, 15px 80px #FFF, 20px 80px #000,
+        5px 85px #000, 10px 85px #000, 15px 85px #000, 20px 85px #000;
+}
