@@ -6,6 +6,7 @@ import { Card } from "./Card"
 const CardsContainer = styled.ul`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `
 
 const CardList = () => {
@@ -18,9 +19,9 @@ const CardList = () => {
 
 
 
+
     return (
         <div>
-            CardList
             {isLoading && `En cours de chargement...`}
             {isError && ` Une erreur est survenue : ${error}`}
 
