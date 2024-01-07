@@ -1,5 +1,5 @@
 import Card from "./Card";
-import '../styles/styles.css'
+import '../../styles/styles.css'
 import './board.css'
 const Board = ({ images, handleClick, isInTransit }) => {
     return (
