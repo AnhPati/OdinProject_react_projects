@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import CardList from "./shop/CardList"
-import Cart from "./shop/Cart"
+import CardList from "./CardList"
+import Cart from "./Cart"
 
 const queryClient = new QueryClient()
 
