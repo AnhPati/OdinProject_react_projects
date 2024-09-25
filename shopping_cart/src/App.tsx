@@ -8,10 +8,18 @@ function App() {
 
   const handleAddToCart = (productToAdd, quantity) => {
     const newProductsCart = [...productsCart]
-    const productWithQuantity = { ...productToAdd, quantity }
-    newProductsCart.push(productWithQuantity)
+    const isAlready = newProductsCart.find(product => product.id === productToAdd.id) === undefined ? false : true
 
-    setProductsCart(newProductsCart)
+    if (isAlready) {
+      const productIndex = newProductsCart.findIndex(product => product.id === productToAdd.id)
+      newProductsCart[productIndex].quantity = Number(newProductsCart[productIndex].quantity) + Number(quantity)
+
+      setProductsCart(newProductsCart)
+    } else {
+      const productWithQuantity = { ...productToAdd, quantity }
+      newProductsCart.push(productWithQuantity)
+      setProductsCart(newProductsCart)
+    }
   }
 
   return (
