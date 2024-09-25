@@ -10,12 +10,6 @@ export const NavbarList = ({ isShop, productsCart }) => {
     const nextPage = isShop ? '' : 'shop'
     const nextPageIcon = isShop ? faCircleLeft : faStore
     const productsNumber = productsCart.length > 0 ? productsCart.reduce((acc, currentValue) => acc + Number(currentValue.quantity), 0) : 0
-    console.log("Product Number:")
-    console.log(productsNumber)
-    console.log("Product Cart:")
-    console.log(productsCart)
-    console.log("Product Cart Length:")
-    console.log(productsCart.length)
     return (
         <NavbarListStyled>
             <NavbarLink isShop={isShop}>
