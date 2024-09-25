@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <Navbar productsCart={{ productsCart }} isHome={isHome} setIsHome={setIsHome} />
+      <Navbar productsCart={productsCart} isHome={isHome} setIsHome={setIsHome} />
       <Outlet context={{ productsCart, handleAddToCart }} />
     </>
   )

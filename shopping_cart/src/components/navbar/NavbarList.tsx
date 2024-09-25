@@ -9,7 +9,13 @@ import { faCircleLeft, faStore } from "@fortawesome/free-solid-svg-icons"
 export const NavbarList = ({ isShop, productsCart }) => {
     const nextPage = isShop ? '' : 'shop'
     const nextPageIcon = isShop ? faCircleLeft : faStore
-
+    const productsNumber = productsCart.length > 0 ? productsCart.reduce((acc, currentValue) => acc + Number(currentValue.quantity), 0) : 0
+    console.log("Product Number:")
+    console.log(productsNumber)
+    console.log("Product Cart:")
+    console.log(productsCart)
+    console.log("Product Cart Length:")
+    console.log(productsCart.length)
     return (
         <NavbarListStyled>
             <NavbarLink isShop={isShop}>
@@ -19,7 +25,7 @@ export const NavbarList = ({ isShop, productsCart }) => {
             </NavbarLink>
             <NavbarTitleContainer isShop={isShop} />
             <NavbarLink isShop={isShop}>
-                <CartButton productsNumber={productsCart.length} colorShop={isShop} disabled={!isShop} />
+                <CartButton productsNumber={productsNumber} colorShop={isShop} disabled={!isShop} />
             </NavbarLink>
         </NavbarListStyled>
     )

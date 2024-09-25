@@ -4,7 +4,6 @@ import { NavbarList } from "./NavbarList"
 
 const Navbar = ({ productsCart }) => {
   const location = useLocation()
-
   const isShop = location.pathname === '/shop' ? true : false
 
   return (
