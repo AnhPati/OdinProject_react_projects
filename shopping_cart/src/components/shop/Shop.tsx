@@ -6,7 +6,7 @@ import { useOutletContext } from "react-router-dom"
 const queryClient = new QueryClient()
 
 const Shop = () => {
-    const { handleAddToCart } = useOutletContext()
+    const { productsCart, handleAddToCart } = useOutletContext()
 
     return (
         <div>
@@ -15,7 +15,7 @@ const Shop = () => {
             <QueryClientProvider client={queryClient}>
                 <CardList addToCart={handleAddToCart} />
             </QueryClientProvider>
-            <Cart />
+            <Cart productsCart={productsCart} />
         </div>
     )
 }
