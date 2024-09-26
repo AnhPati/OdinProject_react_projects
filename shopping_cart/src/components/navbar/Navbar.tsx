@@ -16,6 +16,9 @@ const Navbar = ({ productsCart }) => {
 export default Navbar
 
 const NavbarStyled = styled.nav<{ $isShop?: boolean }>`
+  position: sticky;
+  top: 0px;
+  z-index: 100;
   background: ${props => props.$isShop ? '#FFBA18' : '#74DAF8'};
   color: ${props => props.$isShop ? '#582D1D' : '#1D3E56'};
   font-family: 'Josefin Sans', sans-serif;
