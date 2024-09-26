@@ -19,11 +19,14 @@ const Cart = ({ productsCart }) => {
                         </li>
                     )}
                 </ul>
-                <hr />
-                <h2>Réglez votre commande</h2>
-                <div className="cart-pay">
-                    <p>A régler : {amount + (amountDecimal && '0')} €</p>
-                    <button>Payer</button>
+
+                <div className="amount-container">
+                    <hr />
+                    <h2>Réglez votre commande</h2>
+                    <div className="cart-pay">
+                        <p>A régler : {amount + (amountDecimal && '0')} €</p>
+                        <button>Payer</button>
+                    </div>
                 </div>
             </form>
         </CartStyled>
@@ -47,9 +50,16 @@ const CartStyled = styled.div`
         max-width: 70px;
     }
 
-    .cart-pay {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    .amount-container {
+        position: sticky;
+        bottom: 0;
+        background: #FFF;
+        padding-top: 20px;
+
+        .cart-pay {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    } 
 `;
