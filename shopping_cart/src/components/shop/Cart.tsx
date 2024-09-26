@@ -11,12 +11,19 @@ const Cart = ({ productsCart }) => {
                 <h2>Récapitulatif de votre commande</h2>
                 <ul>
                     {productsCart.map(product =>
-                        <li key={product.id}>
-                            <p>{product.title}</p>
-                            <p>Prix unitaire : {product.price}</p>
-                            <p>Quantité : {product.quantity}</p>
-                            <img src={product.image} alt={product.title} />
-                        </li>
+                        <>
+                            <hr />
+                            <li key={product.id}>
+                                <h3>{product.title}</h3>
+                                <div className="cart-infos">
+                                    <img src={product.image} alt={product.title} />
+                                    <div>
+                                        <p>Prix unitaire : {product.price}</p>
+                                        <p>Quantité : {product.quantity}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </>
                     )}
                 </ul>
 
@@ -41,13 +48,30 @@ const CartStyled = styled.div`
     align-items: center;
     font-family: 'Josefin Sans', sans-serif;
 
+    
+    form {
+        max-width: 360px;
+        padding: 10px 30px;
+    }
+
     ul {
         padding-left: 0;
         list-style: none;
+
+        li {
+            padding: 10px 0 20px;
+        }
     }
 
     img {
         max-width: 70px;
+    }
+
+    .cart-infos {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
     }
 
     .amount-container {
