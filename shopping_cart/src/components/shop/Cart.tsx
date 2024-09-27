@@ -84,6 +84,28 @@ const CartStyled = styled.div`
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            button {
+                padding: 10px 20px;
+                background: #FFBA18;
+                color: #582D1D;
+                border: 2px solid #582D1D;
+                border-radius: 5px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+
+                &:hover {
+                    background: #FBE577;
+                    color: #FFBA18;
+                    border-color: #FFBA18;
+                }
+                &:active {
+                    background: #582D1D;
+                    color: #FFBA18;
+                    border-color: 2px solid #FFBA18;
+                }
+            }
         }
     } 
 `;
