@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import CardList from "./CardList"
-import Cart from "./Cart"
+import Cart from "./cart/Cart"
 import { useOutletContext } from "react-router-dom"
 
 const queryClient = new QueryClient()
