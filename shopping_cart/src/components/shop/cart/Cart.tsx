@@ -4,7 +4,7 @@ const Cart = ({ productsCart, onClick }) => {
     const amount = productsCart.reduce((acc, currentValue) => acc + Number(currentValue.quantity) * currentValue.price, 0)
     const amountString = amount.toString()
     const amountDecimal = (amountString.slice(amountString.indexOf('.') + 1).length < 2) && (amountString.includes('.')) ? true : false
-    console.log(productsCart)
+
     return (
         <CartStyled id="cart">
             <form>
