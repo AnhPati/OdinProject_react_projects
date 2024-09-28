@@ -22,10 +22,14 @@ function App() {
     }
   }
 
+  const handleResetCart = () => {
+    setProductsCart([])
+  }
+
   return (
     <>
       <Navbar productsCart={productsCart} isHome={isHome} setIsHome={setIsHome} />
-      <Outlet context={{ productsCart, handleAddToCart }} />
+      <Outlet context={{ productsCart, handleAddToCart, handleResetCart }} />
     </>
   )
 }

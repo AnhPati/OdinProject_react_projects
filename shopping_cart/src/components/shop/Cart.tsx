@@ -1,13 +1,13 @@
 import styled from "styled-components"
 
-const Cart = ({ productsCart }) => {
+const Cart = ({ productsCart, onClick }) => {
     const amount = productsCart.reduce((acc, currentValue) => acc + Number(currentValue.quantity) * currentValue.price, 0)
     const amountString = amount.toString()
     const amountDecimal = (amountString.slice(amountString.indexOf('.') + 1).length < 2) && (amountString.includes('.')) ? true : false
     console.log(productsCart)
     return (
         <CartStyled id="cart">
-            <form action="submit">
+            <form>
                 <h2>Récapitulatif de votre commande</h2>
                 <ul>
                     {productsCart.map(product =>
@@ -32,7 +32,7 @@ const Cart = ({ productsCart }) => {
                     <h2>Réglez votre commande</h2>
                     <div className="cart-pay">
                         <p>A régler : {amount + (amountDecimal && '0')} €</p>
-                        <button>Payer</button>
+                        <button onClick={onClick}>Payer</button>
                     </div>
                 </div>
             </form>
