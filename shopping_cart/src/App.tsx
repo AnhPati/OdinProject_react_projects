@@ -22,6 +22,15 @@ function App() {
     }
   }
 
+  const handleRemoveFromCart = (productToRemoveId) => {
+    const newProductsCart = [...productsCart]
+
+    const productIndex = newProductsCart.findIndex(product => product.id === productToRemoveId)
+    newProductsCart.splice(productIndex, 1)
+
+    setProductsCart(newProductsCart)
+  }
+
   const handleResetCart = () => {
     setProductsCart([])
   }
@@ -29,7 +38,7 @@ function App() {
   return (
     <>
       <Navbar productsCart={productsCart} isHome={isHome} setIsHome={setIsHome} />
-      <Outlet context={{ productsCart, handleAddToCart, handleResetCart }} />
+      <Outlet context={{ productsCart, handleAddToCart, handleRemoveFromCart, handleResetCart }} />
     </>
   )
 }

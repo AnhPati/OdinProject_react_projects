@@ -1,8 +1,11 @@
-import { Fragment } from "react";
 import styled from "styled-components";
 import { CartProduct } from "./CartProduct";
 
-export const CartSummary = ({ products }) => {
+export const CartSummary = ({ products, removeFromCart }) => {
+    const onDelete = (productId) => {
+        removeFromCart(productId)
+    }
+
     return (
         <CartSummaryStyled>
             <h2>Récapitulatif de votre commande</h2>
@@ -15,6 +18,7 @@ export const CartSummary = ({ products }) => {
                         image={image}
                         price={price}
                         quantity={quantity}
+                        onClick={() => onDelete(id)}
                     />
                 )}
             </ul>

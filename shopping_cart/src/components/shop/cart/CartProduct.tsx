@@ -2,12 +2,12 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
-export const CartProduct = ({ title, image, price, quantity }) => {
+export const CartProduct = ({ title, image, price, quantity, onClick }) => {
     return (
         <>
             <hr />
             <CartProductStyled>
-                <div className="remove-cart">
+                <div className="remove-cart" onClick={onClick}>
                     <FontAwesomeIcon icon={faTrash} />
                 </div>
                 <h3>{title}</h3>
