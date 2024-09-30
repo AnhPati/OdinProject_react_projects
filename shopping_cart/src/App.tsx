@@ -4,7 +4,6 @@ import Navbar from "./components/navbar/Navbar"
 
 function App() {
   const [productsCart, setProductsCart] = useState([])
-  const [isHome, setIsHome] = useState(true)
 
   const handleAddToCart = (productToAdd, quantity) => {
     const newProductsCart = [...productsCart]
@@ -37,7 +36,7 @@ function App() {
 
   return (
     <>
-      <Navbar productsCart={productsCart} isHome={isHome} setIsHome={setIsHome} />
+      <Navbar productsCart={productsCart} />
       <Outlet context={{ productsCart, handleAddToCart, handleRemoveFromCart, handleResetCart }} />
     </>
   )
