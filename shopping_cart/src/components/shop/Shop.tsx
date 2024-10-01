@@ -10,8 +10,6 @@ const Shop = () => {
 
     return (
         <div>
-            Shop
-
             <QueryClientProvider client={queryClient}>
                 <CardList addToCart={handleAddToCart} />
             </QueryClientProvider>
