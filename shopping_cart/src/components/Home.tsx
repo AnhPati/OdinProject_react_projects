@@ -38,14 +38,17 @@ const HomeStyled = styled.main`
 
     h1 {
         background: #1D3E56;
+        border: solid 1px #FFF;
         border-radius: 4px;
         margin: 0;
-        padding: 5px 10px;
+        padding: 10px 10px 0px 10px;
         text-transform: uppercase;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 2.8em;
         font-weight: 700;
         color: #FFF;
+        z-index: 1;
+        animation: flipInUp 5000ms ease-in-out;
     }
 
     img {
@@ -156,6 +159,26 @@ const HomeStyled = styled.main`
 
         100% {
             transform: translateX(120%);
+        }
+    }
+
+    @keyframes flipInUp {
+        0% {
+            transform: scale(0.2) translateY(0%);
+            z-index: 0;
+        }
+
+        50% {
+            transform: translateY(-350%);
+        }
+
+        80% {
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        100% {
+            transform: translateY(0%);
         }
     }
 `;
