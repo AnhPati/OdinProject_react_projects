@@ -36,6 +36,18 @@ const HomeStyled = styled.main`
     background: #1D3E56;
     animation: fadeBackgroundColor 5000ms ease-in;
 
+    h1 {
+        background: #1D3E56;
+        border-radius: 4px;
+        margin: 0;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2.8em;
+        font-weight: 700;
+        color: #FFF;
+    }
+
     img {
         position: absolute;
         bottom: 50%;
