@@ -15,7 +15,7 @@ export const CountButton = () => {
     return (
         <SelectContainer>
             <label htmlFor="number-of-product">{`Nombre d'articles (20 max) : `}</label>
-            <input type="number" min="0" max="20" step="any" name="number-of-product" defaultValue="0" />
+            <input type="number" min="1" max="20" step="any" name="number-of-product" defaultValue="1" />
         </SelectContainer>
     )
 }

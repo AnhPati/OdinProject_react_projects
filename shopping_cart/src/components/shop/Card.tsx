@@ -2,6 +2,27 @@ import styled from "styled-components"
 import { CountButton } from "../utils/CountButton"
 import { AddCartButton } from "../utils/AddCartButton"
 
+export const Card = ({ id, title, description, image, price, addToCart }) => {
+    const priceString = price.toString()
+    const priceDecimal = (priceString.slice(priceString.indexOf('.') + 1).length < 2) && (priceString.includes('.')) ? true : false
+
+
+    return (
+        <CardContainer id={id}>
+            <CardTitle>{title}</CardTitle>
+            <ImageContainer>
+                <CardImage src={image} alt={title} />
+                <CardPrice>{price + (priceDecimal && '0')} €</CardPrice>
+            </ImageContainer>
+            <CardDescription>{description}</CardDescription>
+            <CardButtonsContainer>
+                <CountButton />
+                <AddCartButton addCart={addToCart} />
+            </CardButtonsContainer>
+        </CardContainer>
+    )
+}
+
 const CardContainer = styled.li`
     max-width: 300px;
     height: auto;
@@ -60,23 +81,3 @@ const CardButtonsContainer = styled.div`
     display: flex;
     flex-direction: column;
 `
-
-export const Card = ({ id, title, description, image, price, addCart }) => {
-    const priceString = price.toString()
-    const priceDecimal = (priceString.slice(priceString.indexOf('.') + 1).length < 2) && (priceString.includes('.')) ? true : false
-
-    return (
-        <CardContainer id={id}>
-            <CardTitle>{title}</CardTitle>
-            <ImageContainer>
-                <CardImage src={image} alt={title} />
-                <CardPrice>{price + (priceDecimal && '0')} €</CardPrice>
-            </ImageContainer>
-            <CardDescription>{description}</CardDescription>
-            <CardButtonsContainer>
-                <CountButton />
-                <AddCartButton addCart={addCart} />
-            </CardButtonsContainer>
-        </CardContainer>
-    )
-}

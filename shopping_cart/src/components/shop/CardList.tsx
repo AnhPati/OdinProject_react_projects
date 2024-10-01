@@ -9,7 +9,7 @@ const CardsContainer = styled.ul`
     justify-content: center;
 `
 
-const CardList = () => {
+const CardList = ({ addToCart }) => {
     const queryKey = ['products',]
     const { data, isLoading, isError, error } = useQuery({
         queryKey: queryKey,
@@ -18,6 +18,13 @@ const CardList = () => {
     })
 
 
+
+    const onClick = (productId, event) => {
+        const productToAdd = data.find(product => product.id === productId)
+        const quantity = event.currentTarget.previousSibling.children[1].value
+        addToCart(productToAdd, quantity)
+        event.currentTarget.previousSibling.children[1].value = 1
+    }
 
 
     return (
@@ -34,6 +41,7 @@ const CardList = () => {
                         description={product.description}
                         image={product.image}
                         price={product.price}
+                        addToCart={(event) => onClick(product.id, event)}
                     />
                 )}
             </CardsContainer>
